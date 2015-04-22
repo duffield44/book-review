@@ -31,6 +31,7 @@
   		replace: true,
   		controller: function(){
   			this.showForm = false;
+        this.book = {};
   		},
   		controllerAs: 'reviewFormCtrl',
       scope: {
