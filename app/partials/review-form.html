@@ -19,8 +19,8 @@
       <p>{{reviewFormCtrl.book.review}}</p>
 
       <ul class="list-unstyled">
-        <li>
-          <span class="label label-primary">genre</span>
+        <li ng-repeat="(genre, state) in reviewFormCtrl.book.genres">
+          <span class="label label-primary">{{genre}}</span>
         </li>
       </ul>
     </div>
@@ -74,9 +74,9 @@
     <fieldset class="form-group">
       <label class="control-label col-sm-2" >Genre:</label>
       <div class="genre">
-        <label for="genre" class="genre-label form-control">
-          <input type="checkbox" name="genre" id="genre"/>
-          genre
+        <label ng-repeat="genre in genres" for="{{genre}}" class="genre-label form-control">
+          <input type="checkbox" name="genre" id="{{genre}}" ng-model="reviewFormCtrl.book.genres[genre]" />
+          {{genre}}
         </label>
       </div>
     </fieldset>
